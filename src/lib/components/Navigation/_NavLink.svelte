@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores'
 	import { onMount, type Snippet } from 'svelte'
+	import { base } from '$app/paths'
 
 	let { slug, children }: { slug: string; children: Snippet } = $props()
 
@@ -12,7 +13,7 @@
 	})
 </script>
 
-<a href={`/poemes/${slug}`} aria-current={isCurrent ? 'page' : false} bind:this={element}
+<a href={`${base}/poemes/${slug}`} aria-current={isCurrent ? 'page' : false} bind:this={element}
 	>{@render children()}</a
 >
 
